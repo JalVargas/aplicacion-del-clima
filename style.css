@@ -110,13 +110,11 @@ img{
     font-weight: 500;
     display: none;
 }
-.div{
-    display: none;
+.caja {
   width: 300px;
   height: 150px;
   border: 2px solid black;
-  display: flex;
-  justify-content: center; /* Horizontal */
-  align-items: center;     /* Vertical */
-  text-align: center;      /* Por si el texto ocupa varias líneas */
+  padding: 10px;
+  word-wrap: break-word;   /* Ajusta palabras largas */
+  overflow-wrap: break-word; /* Alternativa moderna */
 }
