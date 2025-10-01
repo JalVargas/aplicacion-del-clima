@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weather App</title>
+        
+        <title>aplicacion del clima</title>
         <link rel="stylesheet" href="style.css">
        
     
@@ -33,7 +34,7 @@
                     <img src="./weather/Imagenes-del-clima/wind.png">
                     <div>
                         <p class="wind">10km/h</p>
-                        <p>velocidad del viento</p>
+                     <p>velocidad del viento</p>
                 </div>
             </div>
         </div>
@@ -80,13 +81,23 @@ async function checkweather(city) {
     document.querySelector(".details").style.marginTop = "30px";
     document.querySelector(".error").style.display = "none";
  }
-    searchBtn.addEventListener("click",()=>{
-        checkweather(searchBox.value);
-    });
+     // 👉 Evento del botón
+  searchBtn.addEventListener("click", () => {
+    const city = searchBox.value.trim();
+
+    if (city === "") {
+      alert("Por favor ingresa una ciudad antes de buscar.");
+      return;
+    }
+
+    checkweather(city);
+  });
+
     searchBox.addEventListener("keyup", (event) => {
         if (event.key == "Enter") {
             checkweather(searchBox.value);
         }
+                
     });
 
 
