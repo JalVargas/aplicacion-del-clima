@@ -8,7 +8,9 @@
 
     <title>aplicacion del clima</title>
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wdth,wght@87.5,500&family=Lato:wght@100&display=swap');
+    </style>
 
 
 </head>
@@ -20,7 +22,7 @@
             <input type="text" placeholder="Ciudad a consultar" spellcheck="false">
             <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="black" stroke-width="2" stroke-linejoin="
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                    class=" icon icon-tabler icons-tabler-outline icon-tabler-search">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                     <path d="M21 21l-6 -6" />
@@ -47,6 +49,7 @@
                     </div>
                 </div>
             </div>
+            <iframe id="pinterestFrame" src="https://assets.pinterest.com/ext/embed.html?id=7177680651773330" height="354" width="450" frameborder="0" scrolling="no" style="display:none; margin-top:20px;"></iframe>
             <script>
                 const apiKey = "51281a44096af7392ade388f0ddeb02a";
                 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
@@ -75,7 +78,7 @@
                     if (data.weather[0].main == "Clouds") {
                         weatherIcon.src = "weather/Imagenes-del-clima/clouds.png";
                     } else if (data.weather[0].main == "Clear") {
-                        weatherIcon.src = "weather/Imagenes-del-clima/clear.png";
+                     
                     } else if (data.weather[0].main == "Rain") {
                         weatherIcon.src = "weather/Imagenes-del-clima/rain.png";
                     } else if (data.weather[0].main == "Drizzle") {
