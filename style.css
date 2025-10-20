@@ -35,14 +35,23 @@ body {
 .busqueda img {
     cursor: pointer;
     background-color: transparent;
+    color: transparent;
+    
+    :hover, focus{
+        background-color: white;
+    }
+
+    
     
 }
 
 input {
-    border-radius: 10rem;
     text-align: center;
     width: 20rem;
     background-color: transparent;
+    border-bottom: 0;
+    border: 0;
+
 
 }
 
@@ -51,6 +60,7 @@ input {
     border-radius: 1rem;
     backdrop-filter: red(10px);
     border: 1px solid rgba(255, 255, 255, 0.2)
+    
 }
 
 img {
@@ -77,4 +87,17 @@ img {
 
 
     
+}
+button{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 50%;
+    
+
+    &:active{
+    transform: scale(0.90);
+    }
+      
+    
+
 }
