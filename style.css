@@ -48,18 +48,6 @@ body {
 
 }
 
-.busqueda img {
-    background-color: transparent;
-    color: transparent;
-    
-    /* :hover, focus{
-        background-color: white;
-    } */
-
-    
-    
-}
-
 input {
     text-align: center;
     width: 20rem;
