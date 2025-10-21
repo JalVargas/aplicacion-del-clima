@@ -109,7 +109,7 @@ button{
     transition: all 0.10s;
     
 
-    &:active{
+    :active{
     transform: scale(0.80);
     }
       
