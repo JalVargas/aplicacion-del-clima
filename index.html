@@ -11,7 +11,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wdth,wght@87.5,500&family=Lato:wght@100&display=swap');
     </style>
-
+<script defer>
+  document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth) * 10;
+    const y = (e.clientY / window.innerHeight) * 10;
+    document.body.style.backgroundPosition = `${50 - x}% ${50 - y}%`;
+  });
+</script>
 
 </head>
 
@@ -111,6 +117,7 @@
                     }
 
                 });
+                
 
 
             </script>
