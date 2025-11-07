@@ -64,62 +64,19 @@
                 const searchBtn = document.querySelector(".busqueda button");
                 const weatherIcon = document.querySelector(".weather .icon");
 
-                async function checkweather(city) {
-                    const response = await fetch(`${apiUrl}&q=${city}&appid=${apiKey}`);
-
-                    if (response.status == 404) {
-                        document.querySelector(".error").style.display = "block";
-                        document.querySelector(".weather").style.display = "none";
-                    } else {
-                        document.querySelector(".error").style.display = "none";
-                    }
-                    var data = await response.json();
-
-
-                    document.querySelector(".city").innerHTML = data.name;
-                    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-                    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-                    document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
-
-                    if (data.weather[0].main == "Clouds") {
-                        weatherIcon.src = "weather/Imagenes-del-clima/clouds.png";
-                    } else if (data.weather[0].main == "Clear") {
-                     
-                    } else if (data.weather[0].main == "Rain") {
-                        weatherIcon.src = "weather/Imagenes-del-clima/rain.png";
-                    } else if (data.weather[0].main == "Drizzle") {
-                        weatherIcon.src = "weather/Imagenes-del-clima/drizzle.png";
-                    } else if (data.weather[0].main == "Mist") {
-                        weatherIcon.src = "weather/Imagenes-del-clima/mist.png";
-                    }
-                    document.querySelector(".weather").style.display = "block";
-                    document.querySelector(".tarjeta").style.height = "400px";
-                    document.querySelector(".weather").style.marginTop = "20px";
-                    document.querySelector(".busqueda").style.marginTop = "30px";
-                    document.querySelector(".details").style.marginTop = "30px";
-                    document.querySelector(".error").style.display = "none";
-                }
-                // 👉 Evento del botón
-                searchBtn.addEventListener("click", () => {
-                    const city = searchBox.value.trim();
-
-                    if (city === "") {
-                        alert("Por favor ingresa una ciudad antes de buscar.");
-                        return;
-                    }
-
-                    checkweather(city);
-                });
-
-                searchBox.addEventListener("keyup", (event) => {
-                    if (event.key == "Enter") {
-                        checkweather(searchBox.value);
-                    }
-
-                });
-                
-
-
+import("./weather.js").then(module => {
+    const fetchWeather = module.fetchWeather;
+    searchBtn.addEventListener("click", () => {
+        fetchWeather(searchBox.value, apiUrl, apiKey);
+    })
+    
+    // Buscar también al presionar Enter en el input
+    searchBox.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+            fetchWeather(searchBox.value, apiUrl, apiKey);
+        }
+    });
+});
             </script>
 </body>
 

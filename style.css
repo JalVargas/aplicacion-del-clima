@@ -22,6 +22,9 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  background-attachment: fixed;
+  /* Suavizar cambios de fondo (nota: background-image no anima, pero podemos animar propiedades como opacity si se necesita) */
+  transition: background 0.4s ease-in-out;
 }
 
 @media (max-width: 37.5rem) {
@@ -50,19 +53,20 @@ body {
 
 input {
   text-align: center;
-  width: 20rem;
+  width: 15rem;
   background-color: transparent;
-  border-bottom: 0;
   border: 0;
   outline: none;
-
   transition: all 0.3s;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
-  &:hover,
-  &:focus {
-    background-color: #1b5deb;
-    border-radius: 1rem;
-  }
+input:hover,
+input:focus {
+  background-color: #1b5deb;
+  border-radius: 1rem;
+  color: #fff;
 }
 
 img {
@@ -80,8 +84,9 @@ img {
 }
 
 .icon {
-  width: 100px;
+  width: 50px;
 }
+
 .details {
   display: flex;
   justify-content: space-between;
@@ -89,12 +94,11 @@ img {
 button {
   background-color: transparent;
   border: 0;
-  border-bottom: 50%;
   transition: all 0.1s;
+}
 
-  :active {
-    transform: scale(0.8);
-  }
+button:active {
+  transform: scale(0.8);
 }
 /* .lato-thin {
   font-family: "Lato", sans-serif;
