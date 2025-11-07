@@ -69,7 +69,7 @@ export async function fetchWeather(city, apiUrl, apiKey) {
     // Mapeo simple a imágenes locales dentro del proyecto.
     const weatherBackgrounds = {
       Clear: "weather/Imagenes-del-clima/soleado.gif",
-      Clouds: "rain-6812_256.gif",
+      Clouds: "clouds.gif",
       Rain: "rain-6812_256.gif",
       Drizzle: "rain-6812_256.gif",
       Mist: "weather/Imagenes-del-clima/fondo1.png",
